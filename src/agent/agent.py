@@ -6,7 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from retrieval.retriever import retrieve
@@ -24,10 +24,9 @@ def format_docs(docs):
 
 
 def build_chain():
-    llm = ChatOpenAI(
-        model="nvidia/nemotron-3-ultra-550b-a55b:free",
-        openai_api_key=os.getenv("OPENROUTER_API_KEY"),
-        openai_api_base="https://openrouter.ai/api/v1",
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        api_key=os.getenv("GROQ_API_KEY"),
         temperature=0.2,
     )
     prompt = ChatPromptTemplate.from_template("""
