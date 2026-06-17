@@ -10,8 +10,8 @@ Built for a hackathon focused on agentic AI and RAG, targeting Track 5 (Open Inn
 - **Vector DB**: ChromaDB — persists locally at `data/chroma_db/` (~500MB, 80,891 chunks)
 - **LLM**: Llama 3.3 70B via Groq API (free tier)
 - **Framework**: LangChain (langchain-core, langchain-groq, langchain-chroma, langchain-ollama)
-- **Backend**: FastAPI (to be built)
-- **Frontend**: React (to be built)
+- **Backend**: FastAPI (built, running on port 8000)
+- **Frontend**: React + Vite (built, running on port 5173)
 - **Package Manager**: uv (on macOS)
 - **Python**: 3.14
 
@@ -40,10 +40,9 @@ court-navigator/
 │   ├── retrieval/
 │   │   └── retriever.py      # queries ChromaDB, returns top-k chunks
 │   ├── agent/
-│   │   ├── tools.py          # agent tools (to be built)
+│   │   ├── tools.py          # agent tools
 │   │   └── agent.py          # main RAG chain
-│   └── ui/
-│       └── app.py            # Streamlit UI (to be replaced with React)
+├── frontend/                 # React + Vite frontend
 ├── data/
 │   ├── chroma_db/            # generated, not in repo (too large)
 │   └── pdfs/                 # not in repo, download manually

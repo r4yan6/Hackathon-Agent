@@ -84,9 +84,7 @@ court-navigator/
 
 │   │   └── agent.py          # main RAG chain
 
-│   └── ui/
-
-│       └── app.py            # Streamlit frontend
+├── frontend/                 # React + Vite frontend
 
 ├── data/
 
